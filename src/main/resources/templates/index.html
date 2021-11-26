@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta charSet="utf-8"/>
+    <title>自然之友</title>
+    <link rel="icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="../static/css/iconfont.css" th:href="@{/css/iconfont.css}"/>
+    <meta name="next-head-count" content="5"/>
+    <link rel="stylesheet" href="../static/css/styles.8339572e.chunk.css" th:href="@{/css/styles.8339572e.chunk.css}"/>
+    <link rel="stylesheet" href="../static/css/011ba42486257f31e7e9a14eb6e09fbfcad1278b_css.214e42a3.chunk.css" th:href="@{/css/011ba42486257f31e7e9a14eb6e09fbfcad1278b_css.214e42a3.chunk.css}"/>
+    <script src="../static/js/jquery-1.7.js" type="text/javascript" th:src="@{/js/jquery-1.7.js}"></script>
+    <script src="../static/js/jquery-ui.min.js" type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+</head>
+<!--<script type="text/javascript">-->
+<!--    $(function(){-->
+<!--        $("#btn").click(function (){-->
+<!--            let val = $("#key").val()-->
+<!--            // alert(val)-->
+<!--            $.ajax({-->
+<!--                type: "get",-->
+<!--                url: "book/hight/"+val,-->
+<!--                success: function (data) {-->
+<!--                    alert(data)-->
+<!--                },-->
+<!--                error: function (data) {-->
+<!--                    alert(data.message);-->
+<!--                }-->
+<!--            })-->
+<!--        })-->
+<!--    })-->
+<!--</script>-->
+<body>
+<div id="__next">
+    <div class="desktop-layout" style="padding-top:84px">
+        <div class="xs-container">
+            <div class="w510-search">
+                <div class="search-wrap">
+                    <form th:action="@{~/book/hight}" method="get">
+                        <input id="key"  oninput="getAutoCompletedHits(this)" type="text" placeholder="请输入关键词" class="search-input" name="keyword" value=""/>
+                        <input id="btn" type="submit" value="搜索"/>
+                    </form>
+                </div>
+                <div id="content">
+
+                </div>
+            </div>
+
+            <div th:each="book:${res}" th:object="${book}">
+                <div class="l-img-r-content news-list-wrap content-l">
+                    <data class="render-mg" data-component="refer" data-link="/admin/news/index" data-top="10%"></data>
+                    <a class="item hover-img" th:href="${book.get('url')}">
+                        <div class="img-wrap"><img src="images/60154bb5d66cb.jpg" alt="" class="img"/></div>
+                        <div class="content" style="margin-right:0">
+                            <p class="title text-cut" th:utext="${book.get('summary')}">中国环境报 | 阳台种菜达人：大自然带给我们不一样的愉悦</p>
+                            <p class="date">2020-12-30</p>
+                            <p class="desc text-cut-2" th:text="${book.get('title')}">中国环境报</p>
+                            <div class="more text-green" th:text="${book.get('url')}">了解更多
+                                <!-- --> <i class="iconfont icon-arrow-right-bold"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="mb0 paginate-wrap"><span class="pre icon-arrow-left-bold iconfont"></span>
+                <div class="paginate-list"><span class="current-item paginate-item">1</span> <span
+                        class="paginate-item">2</span> <span class="paginate-item">3</span> <span
+                        class="paginate-item">4</span> <span class="paginate-item">5</span></div>
+                <span
+                        class="next icon-arrow-right-bold iconfont"></span><span class="count">共
+                    <!-- -->19
+                    <!-- -->页
+                    </span>
+            </div>
+        </div>
+        <div class="animation-transform-wrap"></div>
+        <div class="fix-menu-wrap"><a class="donate bg-green item" href="/donate">月捐</a><a
+                class="to-top item">TOP</a></div>
+    </div>
+</div>
+</body>
+
+<script>
+    var content  = document.getElementById('content')
+    function getAutoCompletedHits(inputDom) {
+        console.log(inputDom.value)
+        var prefix = inputDom.value
+        if(prefix.trim()){
+            content.innerHTML = ''
+            $.getJSON("http://localhost:8080/book/fix?prefix="+ prefix.trim(), {},
+                function (_data){
+                    for (var i = 0; i<_data.length; i++){
+                        var pTag = document.createElement('p')
+                        pTag.innerText = _data[i]
+                        content.appendChild(pTag)
+                    }
+                })
+        }
+    }
+</script>
+
+<style>
+    .
+</style>
+
+</html>

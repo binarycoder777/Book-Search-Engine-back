@@ -1,0 +1,40 @@
+﻿@charset "utf-8";
+/*-- Logo --*/
+.wj_subNav{color:#bab9b9;}
+.wj_subNav a{margin:0 6px;font-size:12px;color:#42413f;}
+.wj_subNav a.current{ color:#af350b;}
+/*-- Search --*/
+.l_link{ float:left; width:auto; font:12px/20px arial,sans-serif; padding:5px 0 0 15px;}
+.s_link{ float:left; width:auto; font:12px/22px arial,sans-serif; padding:0 0 0 5px;}
+.l_wjSearch_bd{width:500px;height:42px; float:left; }
+.l_wjSearch_bd .submitInput{ width:320px; font:12px/30px arial,sans-serif;}
+.s_search_bd .submitBtn,.s_wjSearch .l_search_btn .submitBtn{ width:115px; height:40px; border:none; background-position:0 -499px; }
+.s_search_bd .submitBtn:hover:hover,.s_wjSearch .l_search_btn .submitBtn:hover{ background-position:-136px -499px;}
+.l_search_bd{ width:500px; float:left;}
+.l_search_bd .submitInput{ width:360px; font:12px/30px arial,sans-serif;}
+.filter_item{ font-size:12px;}
+.filter_item .def a{ width:84px; height:34px;padding-top:0; _padding-top:7px; _height:18px; }
+.s_wjSearch .l_wjSearch_bd .filter_item,.s_wjSearch .l_wjSearch_bd .filter_item .def,.s_wjSearch .l_wjSearch_bd .filter_item .def a{ height:30px; line-height:30px; _height:18px; }
+/*-- union search --*/
+.unionLabel{ width:120px; }
+.unionSearch .fnLst span{ margin-right:5px;}
+/*-- Advance search --*/
+.advanceSearch .submitBtn{ width:162px;  background-position:-279px -499px; padding-left:30px;}
+.advanceSearch .submitBtn:hover{ background-position:-508px -499px;}
+.advanceSearchStep{ background-position:0 -1072px;}
+.advanceSearch .feeds{ margin-right:8px; padding:0;}
+
+.filter_item{ width:94px;}
+.filter_item .def,.filter_item .subLst{ padding:0 5px;}
+.wjDetail .action a{ font-size:10px;}
+
+.suggest-btn{ background-position:-443px -664px;}
+
+.wjResults .summary{ left:175px; }
+.wjResults .catalogue{ left:265px;}
+.wjResults .holdingInfo{ left:360px;}
+
+.wjResults .summary_n{ left:65px; }
+.wjResults .catalogue_n{ left:155px;}
+.wjResults .holdingInfo_n{ left:250px;}
+

@@ -1,0 +1,199 @@
+﻿.ui-autocomplete {
+    width: 500px;
+    border: 1px solid #aaaaaa;
+    background-color: #ffffff;
+}
+.search_text_input
+{
+    font-size: 20px;
+    width: 630px;
+    height: 40px;
+    border: none;
+    margin-top: 3px;
+    outline: none;
+    background-color: rgba(0,0,0,0);
+
+}
+.ui-menu{
+    list-style: none;
+    padding:5px;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.key_item_en{
+
+    display: inline-block;
+}
+
+.key_item_en:nth-child(1) .item_text{
+    width: 40px;
+    height: 20px;
+    background: url("../images/quanbu.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item_en:nth-child(1) .item_text_select {
+    width: 40px;
+    height: 20px;
+    background: url("../images/allselect.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+
+.key_item_en:nth-child(2) .item_text{
+    width: 40px;
+    height: 20px;
+    background: url("../images/books.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(2) .item_text_select{
+    width: 40px;
+    height: 20px;
+    background: url("../images/booksselect.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item_en:nth-child(3) .item_text{
+    width: 50px;
+    height: 20px;
+    background: url("../images/ancientbooks.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+
+.key_item＿en:nth-child(3) .item_text_select{
+    width: 50px;
+    height: 20px;
+    background: url("../images/ancientbooksselect.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(4) .item_text{
+    width: 40px;
+    height: 20px;
+    background: url("../images/papers.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(4) .item_text_select{
+    width: 40px;
+    height: 20px;
+    background: url("../images/papersselect.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(5) .item_text{
+    width: 70px;
+    height: 20px;
+    background: url("../images/periodicalsnewspapers.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(5) .item_text_select{
+    width: 70px;
+    height: 20px;
+    background: url("../images/periodicalsnewspapersselect.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(6) .item_text{
+    width: 60px;
+    height: 20px;
+    background: url("../images/multimedia.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(6) .item_text_select{
+    width: 60px;
+    height: 20px;
+    background: url("../images/multimediaselect.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(7) .item_text{
+    width: 70px;
+    height: 20px;
+    background: url("../images/microforms.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(7) .item_text_select{
+    width: 70px;
+    height: 20px;
+    background: url("../images/microformsselect.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(8) .item_text{
+    width: 40px;
+    height: 20px;
+    background: url("../images/documents.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(8) .item_text_select{
+    width: 40px;
+    height: 20px;
+    background: url("../images/documentsselect.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(9) .item_text{
+    width: 40px;
+    height: 20px;
+    background: url("../images/entries.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.key_item_en:nth-child(9) .item_text_select{
+    width: 40px;
+    height: 20px;
+    background: url("../images/entriesselect.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}

@@ -1,0 +1,436 @@
+﻿html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+
+}
+
+.wj_1024 {
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    position: fixed;
+}
+
+.top_logo {
+    width: 400px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+    background: url("../images/logo.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.shan_bg{
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    /*background: url("../images/gt_bg.png") no-repeat;*/
+    background-size: 100% 80%;
+    background-position: 0px 50px;
+}
+.search_fix {
+    width: 770px;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+
+.search_text {
+    width: 670px;
+    height: 50px;
+    background: url("../images/search_bg.png") no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    padding-left: 20px;
+    font-size: 20px;
+    color: #a6a6a6;
+    float: left;
+    box-sizing: border-box;
+    outline: none;
+    padding-right: 60px;
+}
+
+.advanced_retrieval {
+    width: 100px;
+    height: 50px;
+    float: right;
+    padding-left: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.retrieval—1 {
+    color: #333333;
+    font-size: 14px;
+    position: absolute;
+    top: 1px;
+}
+
+.retrieval—1 a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.retrieval—2 {
+    color: #333333;
+    font-size: 14px;
+    position: absolute;
+    bottom: 1px;
+}
+.retrieval—2 a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.retrieval—2  {
+    color: #333333;
+    font-size: 14px;
+    position: absolute;
+    bottom: 1px;
+}
+
+
+.key_word {
+    width: 750px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.key_item:nth-child(1) .item_text {
+    width: 40px;
+    height: 20px;
+    background: url("../images/all.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(1) .item_text_select {
+    width: 40px;
+    height: 20px;
+    background: url("../images/all_select.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(2) .item_text {
+    width: 40px;
+    height: 20px;
+    background: url("../images/tushu.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(2) .item_text_select {
+    width: 40px;
+    height: 20px;
+    background: url("../images/tushu_select.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(3) .item_text {
+    width: 50px;
+    height: 20px;
+    background: url("../images/guwenxian.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(3) .item_text_select {
+    width: 50px;
+    height: 20px;
+    background: url("../images/guwenxian_select.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(4) .item_text {
+    width: 40px;
+    height: 20px;
+    background: url("../images/lunwen.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(4) .item_text_select {
+    width: 40px;
+    height: 20px;
+    background: url("../images/lunwen_select.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(5) .item_text {
+    width: 70px;
+    height: 20px;
+    background: url("../images/qikan.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(5) .item_text_select {
+    width: 70px;
+    height: 20px;
+    background: url("../images/qikan_select.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(6) .item_text {
+    width: 60px;
+    height: 20px;
+    background: url("../images/duomeiti.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(6) .item_text_select {
+    width: 60px;
+    height: 20px;
+    background: url("../images/duomeiti_select.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(7) .item_text {
+    width: 70px;
+    height: 20px;
+    background: url("../images/wenxian.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(7) .item_text_select {
+    width: 70px;
+    height: 20px;
+    background: url("../images/wenxian_select.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(8) .item_text {
+    width: 40px;
+    height: 20px;
+    background: url("../images/wendang.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(8) .item_text_select {
+    width: 40px;
+    height: 20px;
+    background: url("../images/wendang_select.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(9) .item_text {
+    width: 40px;
+    height: 20px;
+    background: url("../images/citiao.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.key_item:nth-child(9) .item_text_select {
+    width: 40px;
+    height: 20px;
+    background: url("../images/citiao_select.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.search_btn {
+    width: 30px;
+    height: 30px;
+    background: url("../images/search_btn.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 120px;
+    top: 10px;
+}
+
+.item_text:hover {
+    cursor: pointer;
+}
+
+.key_item {
+    display: inline-block;
+}
+
+.shu {
+    width: 2px;
+    height: 15px;
+    background-color: #333333;
+    display: inline-block;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.hot{
+    width: 20px;
+    height: 20px;
+    background: url("../images/hot_icon.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    position: absolute;
+    right: 40px;
+
+    top: 10px;
+}
+.hot_title{
+    display: inline-block;
+    font-size: 14px;
+    color: #333333;
+    position: absolute;
+    right: -35px;
+
+    top: 12px;
+}
+.navigation{
+    padding-top: 20px;
+    position: absolute;
+    right: 130px;
+    z-index: 10000;
+}
+.navigation_item {
+    height: 20px;
+    color: #333333;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.navigation_item a{
+    color: #333333;
+    text-decoration: none;
+}
+
+.navigation_item:hover {
+    cursor: pointer;
+}
+
+
+.copyright{
+
+    text-align: center;
+    margin-top: 150px;
+}
+.record_number {
+    font-size: 12px;
+    color: #bbbbbb;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.all_copyright {
+
+    font-size: 12px;
+    color: #bbbbbb;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.sxk {
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    top: 0px;
+    background-color: #f2f2f2;
+    border: #e0e0e0 1px solid;
+    margin-top: 6px;
+    margin-left: 13px;
+   /* display: inline-flex;
+    align-items: center;
+    justify-content: center;*/
+    color: #333333;
+    font-size: 16px;
+    cursor: pointer;
+    visibility: hidden;
+    text-align: center;
+    line-height: 35px;
+
+}
+
+.bottom_icon {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background: url("../images/01@2x.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 3px;
+    z-index: 99;
+
+}
+
+.xl_list {
+    width: 100px;
+    position: absolute;
+    top: 43px;
+    left: 15px;
+    background-color: #f2f2f2;
+    z-index: 2;
+    visibility: hidden;
+}
+
+.sxk_fix {
+    display: block;
+}
+
+.xl_item {
+    width: 100px;
+    height: 30px;
+   /* display: flex;
+    align-items: center;
+    justify-content: center;*/
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.xl_item:hover {
+    background-color: #a6a6a6;
+    cursor: pointer;
+}
+

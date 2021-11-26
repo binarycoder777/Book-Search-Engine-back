@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="referrer" content="no-referrer">
+<title>Jiumo Search 鸠摩搜索 - 文档搜索引擎</title>
+<meta name="description" content="鸠摩搜索引擎">
+<meta name="keywords" content="鸠摩搜索, 文档, 电子书, 摩鸠, 鸠魔, 鸩摩, 九磨, 官网, 就摸, 鸠, kindle, ebook, jiumosoushu, 找书">
+
+<link rel="shortcut icon" href="../static/images/favicon.png" type="image/png">
+<link id="theme" href="../static/css/main_bright_2.css" rel="stylesheet" type="text/css">
+<link id="theme_main" href="../static/css/main_2.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" async="" src="../static/js/main_wxp.js"></script>
+
+<link rel="apple-touch-icon" sizes="57x57" href="../static/images/apple/apple-57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../static/images/apple/apple-72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../static/images/apple/apple-114.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="../static/images/apple/apple-144.png" />
+
+<!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+<meta name="apple-mobile-web-app-title" content="鸠摩搜索">
+
+<!--
+<script type="text/javascript" src="js/snowstorm_1.js"></script>
+-->
+
+<style>
+
+ul#result-ul li>div {
+	margin-bottom: 15px;
+}
+
+.span-des {
+    line-height: 1.5em;
+    max-height: 3em;
+    overflow: hidden;
+}
+
+.wxtip{background: rgba(0,0,0,0.8); text-align: center; position: fixed; left:0; top: 0; width: 100%; height: 100%; z-index: 998; display: none;}
+.wxtip-icon{width: 52px; height: 67px; background: url(images/weixin-tip.png) no-repeat; display: block; position: absolute; right: 20px; top: 20px;}
+.wxtip-txt{margin-top: 107px; color: #fff; font-size: 16px; line-height: 1.5;}
+
+</style>
+
+
+<script>
+
+// global variables
+var g_css_appendix = "?v=20190761";
+var g_image_link = "";
+var g_loaded_plus = "1";
+var current_theme = "bright";
+
+</script>
+
+</head>
+
+
+<body onload="Pageloaded();" >
+
+<div id="van-overlay" class="van_overlay" style="display:none; z-index: 2001;"></div>
+<div class="wxtip" id="JweixinTip" style="display:none;">
+<span class="wxtip-icon"></span>
+<p class="wxtip-txt" id="wxtip-txt">请点击右上角<br/>选择在浏览器中打开</p>
+</div>
+
+<div style="width:100%;height:auto;">
+
+<div id="logo" class="top-wrapper" >
+<div class="logo">
+
+<div class="icons icon-title" style="margin-left:40px"></div>
+
+
+<div id="setting-ul"  style="margin-top:10px;">
+<div class="icons-group">
+<a id="donate-div" style="display:none;" href="donate.php" target="_blank" onclick="link_clicked('donate clicked ')" title="donate"><div class="icons icon-item-big icon-donate-big"></div></a>
+    <a id="theme-div" href="#" onclick="return themeChanged();" title="change theme"><div class="icons icon-item icon-theme"></div></a>
+    <a href="info.php" target="_blank" onclick="link_clicked('info clicked')"  title="site info"><div id="info-div" class="icons icon-item icon-info"></div></a>
+</div>
+
+</div>
+
+
+
+<div id="bdshare-div" style="margin-top:5px;">
+
+
+<div id="share-buttons-cn"  class="icons-group">
+<a id="wechat-share" title="微信公众号" style="cursor:pointer;" onclick="wechat_overlay_show(); share_record(true, 'shared to wechat'); return false;"><div class="icons icon-item-big-extra icon-wechat-big"></div></a>
+<a href="http://service.weibo.com/share/share.php?url=http%3A%2F%2Fwww.jiumodiary.com&searchPic=true" title="分享到新浪微博" target="_blank" onclick="window.open('http://service.weibo.com/share/share.php?url=http://' + encodeURIComponent(window.location.hostname) + '&title=' + encodeURIComponent(document.title)); share_record(true, 'shared to Weibo'); return false;"><div class="icons icon-item icon-weibo"></div></a>
+<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http%3A%2F%2Fwww.jiumodiary.com" target="_blank" title="分享到QQ空间" onclick="window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://' + encodeURIComponent(window.location.hostname) + '&title=' + encodeURIComponent(document.title));  share_record(true, 'shared to qqzone'); return false;"><div class="icons icon-item icon-qqzone"></div></a>
+<a href="http://www.douban.com/recommend/?url=http%3A%2F%2Fwww.jiumodiary.com" target="_blank" title="分享到豆瓣" onclick="window.open('http://www.douban.com/recommend/?url=http://' + encodeURIComponent(window.location.hostname) + '&title=' + encodeURIComponent(document.title) + ' (' + encodeURIComponent(document.URL) + ')');  share_record(true, 'shared to douban'); return false;"><div class="icons icon-item icon-douban"></div></a>
+<a href="https://app.yinxiang.com/clip.action?url=http%3A%2F%2Fwww.jiumodiary.com" target="_blank" title="分享到印象笔记" onclick="window.open('https://app.yinxiang.com/clip.action?url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title) + ' (' + encodeURIComponent(document.URL) + ')');   share_record(true, 'shared to evernote_cn'); return false;"><div class="icons icon-item icon-evernote"></div></a>
+</div>
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+<div id="main-form"    class="mainform">
+<form id="SearchForm" onsubmit="return startsearch();">
+
+<div id="row-0-space-1" > </div>
+
+<div id="row-1" class="row1" >
+
+<a id="row-1-link" href="#" onclick="return load_mainpage();">
+
+<div id="front-info" style="">
+    <div style='display: inline-block; color: #eee; font-size: 11px; vertical-align: middle;'>AMV-君の名は</div>
+</div>
+
+<img id="front-image"  alt="鸠摩搜书" src="../static/images/google.png" title="">
+</a>
+
+</div>
+
+<div id="row-1-space-2"> </div>
+<div id="row-2" class="row2">
+<input id="SearchWord" type="text" maxlength="2048"  autocomplete="off" class="invert" onfocus="focusinput()">
+</div>
+
+
+<div id="row-2-space-3"> </div>
+
+<div id="row-3" class="row3">
+<button id="SearchButton" type="submit" value="Search" class="button">Search</button>
+</div>
+
+</form>
+
+
+<div id="icon-wrapper" class="row4"></div>
+
+
+<div id="label-div">
+
+<!--	
+<a id="label-a1" href="#"  onclick="wechat_overlay_show(); share_record(true, 'shared to wechat'); return false;">
+鸠摩微信订阅号
+<span class="icons icon-barcode-tiny"></span>
+</a>
+<span class="label_mid">|</span>
+-->
+
+
+<a id="label-a2" rel="noreferrer external nofollow" target="_blank" href="http://www.tytquan.com/index.php?r=l&kw=%E7%95%85%E9%94%80%E4%B9%A6">
+淘宝图书优惠券
+<span class="icons icon-bestseller-tiny"></span>
+</a>
+
+
+<a id="label-a3" rel="noreferrer external nofollow" target="_blank" href="/declare.php">
+| 本站声明
+</a>
+
+
+<a id="label-a4" rel="noreferrer external nofollow" target="_blank" href="/report_abuse.php">
+| 有害信息举报
+</a>
+
+<a id="label-a4" rel="noreferrer external nofollow" target="_blank" href="/comm.php">
+| 广告合作
+</a>
+
+</div>
+
+</div>
+
+<div id="main-panel" style="">
+
+
+<div id="result-panel" style="display: none;">
+
+<div id="result-panel-left">  </div>
+
+
+
+<div id="google-panel" class="google-panel-width" style="vertical-align:top; display: inline-block;">
+<table style="width:100%">
+
+<tr>
+<td style="height: 20px;">
+<span id="format-loading" style="width: 100%; display: none; text-align: right;line-height: 100%;vertical-align: middle;height: 16px;"><img src="../static/images/loading2_bright.gif"></span>
+<span id = "format-filter" style="width: 100%; display: inline-block; text-align: right; "></span>
+</td>
+</tr>
+
+<tr>
+<td style="width: 100%">
+
+<div id="google-div" >
+
+
+
+<div id="google-result-div" style="position: relative;" >
+<ul id="result-ul" style="padding-left: 10px; width: 95%; max-width: 600px;"></ul>
+<div id="loading-icon"  style="display:none;">
+<img src="../static/images/loading_bright_1.gif">
+</div>
+</div>
+
+</div>
+
+</td>
+</tr>
+</table>
+
+</div>
+
+
+
+<div id="result-panel-middle" class="result-panel-middle-hide"> </div>
+
+
+
+<div id="forum-panel-not-ads" style="vertical-align:top; display: inline-block;">
+<table style="width: 100%;">
+
+<tr>
+<td style="height: 20px;">
+<span id = "priced-filter"  style="width: 100%; display: inline-block; text-align: right; ">BBS</span>
+</td>
+</tr>
+
+<tr>
+<td style="width: 100%">
+
+<div id="forum-div">
+</div>
+
+</td>
+</tr>
+</table>
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function open_douyin_with_target() {
+	var a = document.createElement("a");
+    a.setAttribute("href", "snssdk1128://live?room_id=7018877763981445922");
+    a.setAttribute("target", "_blank");
+    document.body.appendChild(a);
+    a.click();
+    a.parentNode && a.parentNode.removeChild(a);
+    prom_text_clicked('m_douyinzhibo');
+}
+
+function open_taobao_with_target() {
+	var a = document.createElement("a");
+    a.setAttribute("href", "taobao://taobao.com");
+    a.setAttribute("target", "_blank");
+    document.body.appendChild(a);
+    a.click();
+    a.parentNode && a.parentNode.removeChild(a);
+}
+
+function prom_text_clicked(prom_mark) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "prom_clicked.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xmlhttp.send("q=" + encodeURIComponent(prom_mark) + "&g_device=" + g_device);
+    return false;
+}
+
+
+function taokouling_show() {
+	// copy taokouling to clipboard
+	var copyText = document.createElement("textarea");
+	copyText.setAttribute("readonly", true);
+    copyText.innerText = '0$yzAlXGbFD5O$://';
+    document.body.appendChild(copyText);
+    copyText.select();
+	copyText.setSelectionRange(0, 99999); /* For mobile devices */
+	document.execCommand("copy");
+    copyText.parentNode && copyText.parentNode.removeChild(copyText);
+	
+	// redirect to taobao app main page 
+	prom_text_clicked('m_double11_direct');
+	open_taobao_with_target();
+	return true;
+}
+
+
+
+
+</script>
+
+</body>
+</html>
