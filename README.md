@@ -30,4 +30,9 @@
 
 整个java服务端实现了前缀搜索、搜索纠错、模糊搜索、搜索分页、高亮显示、搜索推荐等功能模块。
 
+## 项目效果预览
+
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/72557529/175762904-90a96551-47c9-4aa8-a5e0-9b7047ea8cdd.png">
+
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/72557529/175762914-d38140a9-f63a-4f82-b28e-be7e0127bc4f.png">
 
