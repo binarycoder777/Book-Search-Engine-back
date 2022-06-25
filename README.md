@@ -4,18 +4,22 @@
 
 ## 系统架构
 该搜索引擎整体系统架构主要由python数据处理端和java服务端构成。python数据处理端主要任务是从指定的站点爬取书籍信息，然后对数据进行清洗过滤，得到想要的数据后存储到Elasticsearch中，Java服务端使用springboot集成Elasticsearch，并借助于Elasticsearch提供的相关API进行搜索引擎相关功能开发，将接口暴露给web端。用户通过web端进行访问使用该搜索引擎。具体实现架构图如下所示：
+  <img width="504" alt="image" src="https://user-images.githubusercontent.com/72557529/175762847-df001227-2089-48a7-90ed-4277c92e14e1.png">
 
 ## 项目模块说明
- pom.xml: 管理项目需要的jar包依赖
- main: 存放功能代码
- test: 存放测试代码
- resources:存放项目的配置信息
- Main：项目启动程序
- Config: 项目配置类
- Controller: 交互类
- Entity: 实体类
- Mapper: 数据处理类
- Service: 业务处理类
+
+  <img width="395" alt="image" src="https://user-images.githubusercontent.com/72557529/175762855-7df9d5b1-60a5-40fe-af73-b0059b49eee9.png">
+
+- pom.xml: 管理项目需要的jar包依赖
+- main: 存放功能代码
+- test: 存放测试代码
+- resources:存放项目的配置信息
+- Main：项目启动程序
+- Config: 项目配置类
+- Controller: 交互类
+- Entity: 实体类
+- Mapper: 数据处理类
+- Service: 业务处理类
  
 ## 项目技术栈
 
