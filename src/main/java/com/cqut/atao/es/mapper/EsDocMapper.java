@@ -1,7 +1,6 @@
 package com.cqut.atao.es.mapper;
 
-
-import com.cqut.atao.es.entity.EsBook;
+import com.cqut.atao.es.entity.EsDoc;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @since 2021-11-25
  */
 @Repository
-public interface EsBookMapper extends ElasticsearchRepository<EsBook,String> {
+public interface EsDocMapper extends ElasticsearchRepository<EsDoc,String> {
 
 }

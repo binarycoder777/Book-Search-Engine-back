@@ -2,26 +2,18 @@
 //
 //
 //import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-//import com.cqut.atao.es.mapper.BookMapper;
-//import com.cqut.atao.es.mapper.EsBookMapper;
 //import com.cqut.atao.es.entity.Book;
+//import com.cqut.atao.es.entity.Doc;
 //import com.cqut.atao.es.entity.EsBook;
-//import org.apache.lucene.search.join.ScoreMode;
-//import org.elasticsearch.action.search.SearchRequest;
+//import com.cqut.atao.es.entity.EsDoc;
+//import com.cqut.atao.es.mapper.BookMapper;
+//import com.cqut.atao.es.mapper.DocMapper;
+//import com.cqut.atao.es.mapper.EsBookMapper;
+//import com.cqut.atao.es.mapper.EsDocMapper;
 //import org.elasticsearch.action.search.SearchResponse;
-//import org.elasticsearch.client.RequestOptions;
-//import org.elasticsearch.common.text.Text;
-//import org.elasticsearch.common.unit.TimeValue;
-//import org.elasticsearch.index.query.BoolQueryBuilder;
 //import org.elasticsearch.index.query.FuzzyQueryBuilder;
-//import org.elasticsearch.index.query.MatchQueryBuilder;
 //import org.elasticsearch.index.query.QueryBuilders;
-//import org.elasticsearch.search.builder.SearchSourceBuilder;
 //import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
-//import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
-//import org.elasticsearch.search.sort.FieldSortBuilder;
-//import org.elasticsearch.search.sort.SortBuilder;
-//import org.elasticsearch.search.sort.SortOrder;
 //import org.elasticsearch.search.suggest.Suggest;
 //import org.elasticsearch.search.suggest.SuggestBuilder;
 //import org.elasticsearch.search.suggest.SuggestBuilders;
@@ -34,31 +26,32 @@
 //import org.springframework.data.domain.PageImpl;
 //import org.springframework.data.domain.PageRequest;
 //import org.springframework.data.domain.Pageable;
-//import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 //import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 //import org.springframework.data.elasticsearch.core.SearchHit;
 //import org.springframework.data.elasticsearch.core.SearchHits;
 //import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
 //import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 //import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
-//import org.springframework.data.elasticsearch.core.query.Query;
 //import org.springframework.test.context.junit4.SpringRunner;
-//
 //
 //import java.io.IOException;
 //import java.util.ArrayList;
 //import java.util.HashMap;
 //import java.util.List;
 //import java.util.Map;
-//import java.util.concurrent.TimeUnit;
-//import java.util.stream.Collectors;
 //
 //@SpringBootTest
 //@RunWith(SpringRunner.class)
-//public class BookTest {
+//public class DocTest {
 //
 //    @Autowired
 //    private BookMapper bookMapper;
+//
+//    @Autowired
+//    private DocMapper docMapper;
+//
+//    @Autowired
+//    private EsDocMapper esDocMapper;
 //
 //    @Autowired
 //    private EsBookMapper esBookMapper;
@@ -68,18 +61,15 @@
 //
 //    @Test
 //    public void addBook() throws IOException {
-//
-//        QueryWrapper<Book> bookQueryWrapper = new QueryWrapper<>();
-//        bookQueryWrapper.like("title", "spring");
-//        List<Book> books = bookMapper.selectList(bookQueryWrapper);
+//        List<Doc> docs = docMapper.selectList(null).subList(0,1000);
+//        System.out.println("ok");
 ////        System.out.println(bookMapper.selectById(28523));
-//        List<EsBook> esNews = new ArrayList<>();
-//
-//        for (Book book: books){
-//            EsBook news = book.getEsBook();
-//            esNews.add(news);
+//        List<EsDoc> esNews = new ArrayList<>();
+//        for (Doc doc: docs){
+//            EsDoc esDoc = doc.getEsDoc();
+//            esNews.add(esDoc);
 //        }
-//        esBookMapper.saveAll(esNews);
+//        esDocMapper.saveAll(esNews);
 //    }
 //
 //    @Test
@@ -173,5 +163,43 @@
 ////        elasticsearchRestTemplate.
 ////        operations.queryForPage(searchQuery,EsBook.class,indexCoordinates);
 //    }
+//
+//
+//    @Test
+//    public void suggestDoc(){
+//        int pageIndex = 1, pageSize = 10;
+//        String keyword = "java";
+//        List<EsDoc> list = new ArrayList<>();
+//        // 构建查询
+//        FuzzyQueryBuilder matchAllQueryBuilder = QueryBuilders.fuzzyQuery("s_title", keyword);
+//        // 构建高亮
+//        HighlightBuilder highlightBuilder = new HighlightBuilder();
+//        highlightBuilder.preTags("<span style='color: red;'>")
+//                .postTags("</span>")
+//                .field("s_title");//哪个字段高亮
+//        // 构建分页
+//        Pageable pageable= PageRequest.of(pageIndex-1,pageSize);
+//        // 查询
+//        NativeSearchQueryBuilder builder=new NativeSearchQueryBuilder();
+//        NativeSearchQuery query=builder.withQuery(matchAllQueryBuilder)
+//                .withPageable(pageable)
+//                .withHighlightBuilder(highlightBuilder)
+//                .build();
+//        // 数据解析
+//        SearchHits<EsDoc> search = elasticsearchRestTemplate.search(query, EsDoc.class);
+////        Stream<SearchHit<SerchModel>> searchHitStream = search.get();
+//        List<SearchHit<EsDoc>> searchHits = search.getSearchHits();
+//        for (SearchHit<EsDoc> esDocSearchHit: searchHits){
+//            StringBuilder stringBuilder = new StringBuilder();
+//            List<String> summary = esDocSearchHit.getHighlightField("s_title");
+//            for (String s: summary){
+//                stringBuilder.append(s);
+//            }
+//            esDocSearchHit.getContent().setSummary(stringBuilder.toString());
+//            list.add(esDocSearchHit.getContent());
+//        }
+//        Page<EsDoc> esDocPage = new PageImpl<EsDoc>(list,pageable,search.getTotalHits());
+//        System.out.println(esDocPage.getContent());
+//        }
 //
 //}
